@@ -1,0 +1,37 @@
+{
+    "name": "theme-vdoing-blog",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "vuepress dev docs",
+        "_comment": "编译前先清空未使用的图片",
+        "build": "node pic_modify.mjs && node pic_modify.mjs && vuepress build docs",
+        "deploy": "bash deploy.sh",
+        "editFm": "node utils/editFrontmatter.js",
+        "baiduPush": "node utils/baiduPush.js https://xugaoyi.com && bash baiduPush.sh",
+        "publish": "cd theme-vdoing && npm publish && cd ../ && npm update vuepress-theme-vdoing",
+        "deal": "node pic_modify.mjs && node pic_modify.mjs "
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "inquirer": "^7.1.0",
+        "json2yaml": "^1.1.0",
+        "moment": "^2.25.3",
+        "vuepress": "1.5.2",
+        "vuepress-plugin-baidu-autopush": "^1.0.1",
+        "vuepress-plugin-baidu-tongji": "^1.0.1",
+        "vuepress-plugin-demo-block": "^0.7.2",
+        "vuepress-plugin-mermaidjs": "^1.8.1",
+        "vuepress-plugin-one-click-copy": "^1.0.2",
+        "vuepress-plugin-thirdparty-search": "^1.0.2",
+        "vuepress-plugin-zooming": "^1.1.7",
+        "vuepress-theme-vdoing": "^1.5.0",
+        "yamljs": "^0.3.0"
+    },
+    "dependencies": {
+        "gulp": "^4.0.2",
+        "gulp-imagemin": "^8.0.0",
+        "imagemin": "^8.0.1",
+        "imagemin-pngquant": "^9.0.2",
+        "vuepress-plugin-comment": "^0.7.3"
+    }
+}
